@@ -1,24 +1,29 @@
-class Student:
-    """Student class"""
+#!/usr/bin/python3
+"""task 10 module"""
 
+
+class student:
+    """student class"""
     def __init__(self, first_name, last_name, age):
-        """Initialization of the student object"""
+        """Intialization of the student object"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return a dictionary representation of a student instance.
-        If attrs is a list of strings, only attribute names contained
-        in this list must be retrieved. Otherwise, all attributes must
-        be retrieved.
+        """return a dictionary representation of a student instance
+        if attrs is a list of strings, only attribute names contained
+        in this must be retrived.
+        otherwise, all attributes must be retrieved
         """
-        if attrs is None:
+        try:
+            for attr in attrs:
+                if type(attr) is not str:
+                    return self.__dict__
+        except Exception:
             return self.__dict__
-
-        my_dict = {}
-        for key in attrs:
-            if isinstance(key, str) and key in self.__dict__:
-                my_dict[key] = self.__dict__[key]
-
+        my_dict = dict()
+        for key, value in self.__dict__.items():
+            if key in attrs:
+                my_dict[key] = value
         return my_dict
