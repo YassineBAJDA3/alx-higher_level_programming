@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Module for matrix_divided method"""
+
+
 def matrix_divided(matrix, divisor):
     """
     Divides all the numbers in a matrix by a specified divisor.
