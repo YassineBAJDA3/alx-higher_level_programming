@@ -36,4 +36,3 @@ def matrix_divided(matrix, divisor):
     result_matrix = [[round(element / divisor, 2) for element in row] for row in matrix]
 
     return result_matrix
-
