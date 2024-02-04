@@ -58,4 +58,3 @@ class Rectangle:
             rectangle_str += '#' * self.__width + '\n'
         
         return rectangle_str.rstrip('\n')
-
