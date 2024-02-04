@@ -1,31 +1,27 @@
 #!/usr/bin/python3
 """
-Defining a class Rectangle with custom string representation
+Defines a Rectangle class.
 """
 
 class Rectangle:
-    """Representation of Rectangle"""
+    """Representation of a rectangle."""
 
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """Initializes a rectangle."""
         self.width = width
         self.height = height
-	Rectangle.number_of_instances += 1
-    def __del__(self):
-        """Prints a message when an instance is deleted"""
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
-        """Getter for the private instance attribute width"""
+        """Getter for the private instance attribute width."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter for the private instance attribute width"""
+        """Setter for the private instance attribute width."""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -34,12 +30,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Getter for the private instance attribute height"""
+        """Getter for the private instance attribute height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter for the private instance attribute height"""
+        """Setter for the private instance attribute height."""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -47,27 +43,31 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Calculates the rectangle area"""
+        """Calculates the rectangle area."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Calculates the rectangle perimeter"""
+        """Calculates the rectangle perimeter."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """String representation of the rectangle"""
+        """String representation of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        
+
         rectangle_str = ""
         for _ in range(self.__height):
             rectangle_str += '#' * self.__width + '\n'
-        
+
         return rectangle_str.rstrip('\n')
 
     def __repr__(self):
-        """String representation to recreate the object using eval()"""
+        """String representation to recreate the object using eval()."""
         return f"Rectangle({self.__width}, {self.__height})"
 
+    def __del__(self):
+        """Prints a message when an instance is deleted."""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
