@@ -10,10 +10,9 @@ def pascal_triangle(n):
     
     triangle = [[1]]
     while len(triangle) != n:
-        Triagle = triangle[-1]
+        Triangle = triangle[-1]
         tmp = [1]
-        for i in range(len(triangle) - 1):
-            tmp.append(Triagle[i] + Triagle[i + 1])
-        tmp.append(1)
+        for i in range(len(Triangle)):
+            tmp.append(Triangle[i] + Triangle[i + 1] if i + 1 < len(Triangle) else 1)
         triangle.append(tmp)
     return triangle
