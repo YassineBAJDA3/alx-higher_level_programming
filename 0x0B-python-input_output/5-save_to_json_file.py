@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Defining function that writes an 
-Object to a text file
-"""
+"""Defining function that writes an Object to a text file"""
 
 
 import json
