@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defining function that writes an Object to a text file"""
+"""Defining save_json_file function"""
 
 
 import json
