@@ -13,6 +13,7 @@ def pascal_triangle(n):
         Triangle = triangle[-1]
         tmp = [1]
         for i in range(len(Triangle)):
-            tmp.append(Triangle[i] + Triangle[i + 1] if i + 1 < len(Triangle) else 1)
+            tmp.append(Triangle[i] + Triangle[i + 1])
+        tmp.append(1)
         triangle.append(tmp)
     return triangle
