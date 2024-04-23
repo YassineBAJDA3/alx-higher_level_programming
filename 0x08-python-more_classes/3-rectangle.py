@@ -53,7 +53,6 @@ class Rectangle:
     """Returns printable string representation of the rectangle"""
     string = ""
     if self.__width != 0 and self.__height != 0:
-        for _ in range(self.__height):
-            string += "#" * self.__width + "\n"
-    return string.rstrip()  # Remove trailing newline
-
+        string += "\n".join("#" * self.__width
+                            for j in range(self.height))
+    return string
